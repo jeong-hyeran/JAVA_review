@@ -12,9 +12,6 @@ public class Main {
 		int menu;
 		Scanner sc = new Scanner(System.in);
 		String name;
-		int price;
-		String expirationDate;
-		int ageOfUse;
 		
 		// 더미 데이터 추가
 		handler.add(new Toy("기차",5000,6));
@@ -78,12 +75,12 @@ public class Main {
 				System.out.println();
 				if(num != 1 && num!=2) {
 					System.err.println("잘못입력되었습니다.");
-				}
-				
-				arr = handler.sort(num);
-				for (int i = 0; i < arr.length; i++) {
-					if(arr[i]!=null) {
-						System.out.println(arr[i]);
+				}else {
+					arr = handler.sort(num);
+					for (int i = 0; i < arr.length; i++) {
+						if(arr[i]!=null) {
+							System.out.println(arr[i]);
+						}
 					}
 				}
 				break;

@@ -22,7 +22,8 @@ public class Handler {
 		}
 		return row;
 	}
-
+	
+	// 검색
 	public Daiso[] search(String search) {
 		Daiso[] s = null;
 		int count = 0;
@@ -41,7 +42,8 @@ public class Handler {
 		}
 		return s;
 	}
-
+	
+	// 삭제
 	public int delete(String search) {
 		int row =0 ;
 		for (int i = 0; i < arr.length; i++) {
@@ -52,7 +54,8 @@ public class Handler {
 		}
 		return row;
 	}
-
+	
+	// 정렬
 	public Daiso[] sort(int num) {
 		if(num==1) {
 			for (int i = 0; i < arr.length-1; i++) {
