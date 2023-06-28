@@ -9,7 +9,7 @@ class Timer implements Runnable{
 
 		for (int i = 10; i != -1; i--) {
 			System.out.printf("%02d : %02d\n", i/60,i%60);
-			try {Thread.sleep(500);}catch(InterruptedException e){}
+			try {Thread.sleep(1000);}catch(InterruptedException e){}
 		}
 	}
 }
@@ -40,12 +40,16 @@ class StringInput implements Runnable{
 }
 public class Ex03 {
 	public static void main(String[] args) {
+
 		Timer timer = new Timer();
 		Thread th1 = new Thread(timer);
 		
-		StringInput input = new StringInput(null);
+		StringInput input = new StringInput(th1);
+		Thread th2 = new Thread(input);
 		
-		timer.run();
+		th1.start();
+		th2.start();
+		
 		
 		System.out.println();
 	}
